@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>QR-code container</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+</head>
+
+<body>
+
+<div class="root">
+    <div class="arrow-container arrow-container_top">
+        <div class="arrow-wrapper">
+            <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.315 20.3938L0 4.07878L4.07875 3.05176e-05L16.315 12.2363L28.5513 3.05176e-05L32.63 4.07878L16.315 20.3938Z"
+                      fill="#FA95A3"/>
+            </svg>
+        </div>
+        <div class="arrow-wrapper">
+            <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.315 20.3938L0 4.07878L4.07875 3.05176e-05L16.315 12.2363L28.5513 3.05176e-05L32.63 4.07878L16.315 20.3938Z"
+                      fill="#D0021B"/>
+            </svg>
+        </div>
+    </div>
+    <div class="arrow-container arrow-container_horizontal">
+        <div class="arrow-horizontal-wrapper">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.8938 17.1851L4.57875 33.5001L0.5 29.4214L12.7362 17.1851L0.5 4.94887L4.57875 0.870121L20.8938 17.1851Z"
+                      fill="#FA95A3"/>
+            </svg>
+        </div>
+        <div class="arrow-horizontal-wrapper">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.8938 17.1851L4.57875 33.5001L0.5 29.4214L12.7362 17.1851L0.5 4.94887L4.57875 0.870121L20.8938 17.1851Z"
+                      fill="#D0021B"/>
+            </svg>
+        </div>
+    </div>
+    <div class="arrow-container arrow-container_bottom">
+        <div class="arrow-wrapper">
+            <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.685 0.606066L33 16.9211L28.9212 20.9998L16.685 8.76357L4.44875 20.9998L0.369999 16.9211L16.685 0.606066Z"
+                      fill="#D0021B"/>
+            </svg>
+        </div>
+        <div class="arrow-wrapper">
+            <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.685 0.606066L33 16.9211L28.9212 20.9998L16.685 8.76357L4.44875 20.9998L0.369999 16.9211L16.685 0.606066Z"
+                      fill="#FA95A3"/>
+            </svg>
+        </div>
+    </div>
+    <div class="arrow-container arrow-container_right arrow-container_horizontal">
+        <div class="arrow-horizontal-wrapper">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M0.106249 16.8151L16.4212 0.500122L20.5 4.57887L8.26375 16.8151L20.5 29.0514L16.4212 33.1301L0.106249 16.8151Z"
+                      fill="#FA95A3"/>
+            </svg>
+
+        </div>
+        <div class="arrow-horizontal-wrapper">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M0.106249 16.8151L16.4212 0.500122L20.5 4.57887L8.26375 16.8151L20.5 29.0514L16.4212 33.1301L0.106249 16.8151Z"
+                      fill="#D0021B"/>
+            </svg>
+        </div>
+    </div>
+    <div class="qr-container">
+        <div class="img"></div>
+    </div>
+</div>
+
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .root {
+        position: relative;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+
+    .arrow-container {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 33px;
+    }
+
+    .arrow-container_top {
+        {#left: 50%;#}
+        top: 10px;
+        left: 283.5px;
+    }
+
+    .arrow-container_bottom {
+        {#left: 50%;#}
+        left: 283.5px;
+
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+
+    .arrow-container_horizontal {
+        top: 283.5px;;
+        transform: translateY(-50%);
+        height: 34px;
+        width: 100px;
+    }
+
+    .arrow-horizontal-wrapper {
+        margin-left: 10px;
+        display: inline-block;
+        height: 34px;
+    }
+
+    .arrow-container_right {
+        right: 10px;
+        text-align: right;
+    }
+
+    .arrow-wrapper {
+        display: inline-block;
+        height: 21px;
+        margin: 0 auto 10px auto;
+    }
+
+    .qr-container {
+        width: 380px;
+        height: 380px;
+        margin: 110px;
+        background-color: #eeeeee;
+    }
+
+    .img {
+        background-image: url("data:image/jpeg;base64,{{ qr_code }}");
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+</body>
+
+</html>
