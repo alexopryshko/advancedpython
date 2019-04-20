@@ -105,3 +105,7 @@ venv.bak/
 
 2/cpython/
 !2/cpython/.gitkeep
+
+.vscode
+6/cython/**/*.c
+6/cython/**/*.html
