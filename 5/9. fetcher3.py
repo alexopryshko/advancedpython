@@ -4,17 +4,7 @@ from selectors import DefaultSelector, EVENT_WRITE, EVENT_READ
 selector = DefaultSelector()
 
 class Future:
-    def __init__(self):
-        self.result = None
-        self._callbacks = []
-
-    def add_done_callback(self, fn):
-        self._callbacks.append(fn)
-
-    def set_result(self, result):
-        self.result = result
-        for fn in self._callbacks:
-            fn(self)
+    ...
 
     def __iter__(self):
         # Tell Task to resume me here.
@@ -96,7 +86,7 @@ def loop():
         events = selector.select()
         for event_key, event_mask in events:
             callback = event_key.data
-            callback()
+            callback()  
 
 # Begin fetching http://xkcd.com/353/
 fetcher = Fetcher()

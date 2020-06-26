@@ -12,6 +12,7 @@ class Future:
         self._callbacks.append(fn)
 
     def set_result(self, result):
+        print(f'[future/{id(self)}] set_result: {result}')
         self.result = result
         for fn in self._callbacks:
             fn(self)
@@ -22,15 +23,18 @@ class Task:
         self.coro = coro
         f = Future()
         f.set_result(None)
+        print('Task.__init__')
         self.step(f)
 
     def step(self, future):
+        print(f'step fut={id(future)}; fut.result={future.result}')
         try:
             next_future = \
                 self.coro.send(future.result)
         except StopIteration:
             return
 
+        print('add cb to next_future=', id(next_future))
         next_future.add_done_callback(self.step)
 
 
@@ -46,12 +50,16 @@ class Fetcher:
         f = Future()
 
         def on_connected():
+            print('[fetch] on_connected cb')
             f.set_result(None)
 
         selector.register(self.sock.fileno(),
                           EVENT_WRITE,
                           on_connected)
-        yield f
+
+        print(f'[fetch] before yield. my fut={id(f)}')
+        result = yield f
+        print(f'[fetch] after yield. my fut={id(f)}, result={result}')
         selector.unregister(self.sock.fileno())
         print('connected!')
 
